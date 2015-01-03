@@ -4,16 +4,18 @@ import os
 class creepInfo():
 	def main(self):
 		start_time = time.time()
-		global dota_time
-		dota_time += 1
-		
 		os.system('cls')
-		print "Tick: %s" % dota_time	
+		print "Tick: %s" % dota_time
+		global dota_time
+		print "DOTA Time: %s" % dota_time
+		dota_time += 1
 
 		creep_state = int(dota_time / 450)
 
 		if creep_state > 30:
 			creep_state = 30
+
+		print "Creep State: %s" % creep_state
 
 		# Creep Stats
 		melee_HP = 550 + (10 * creep_state)
@@ -22,6 +24,22 @@ class creepInfo():
 		ranged_DMG = 23 + (2 * creep_state)
 		siege_HP = 550
 		siege_DMG = 40
+
+		print "Melee HP: %s" % melee_HP
+		print "Melee DMG: %s" % melee_DMG
+		print "Ranged HP: %s" % ranged_HP
+		print "Ranged DMG: %s" % ranged_DMG
+		print "Siege HP: %s" % siege_HP
+		print "Siege DMG: %s" % siege_DMG
+
+
+		#stats = [
+		#melee_HP, 
+		#melee_DMG, 
+		#ranged_HP, 
+		#ranged_DMG, 
+		#siege_HP, 
+		#siege_DMG]
 
 		# Mega Creep Stats
 		mega_melee_HP = 700 + (19 * creep_state)
