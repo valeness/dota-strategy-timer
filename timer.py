@@ -5,9 +5,10 @@ class creepInfo():
 	def main(self):
 		start_time = time.time()
 		os.system('cls')
-		print "Tick: %s" % dota_time
 		global dota_time
-		print "DOTA Time: %s" % dota_time
+		minutes = str(dota_time / 60).zfill(2)
+		seconds = str(dota_time % 60).zfill(2)
+		print "DOTA Time: %s:%s" % (minutes, seconds)
 		dota_time += 1
 
 		creep_state = int(dota_time / 450)
